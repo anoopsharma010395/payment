@@ -1,3 +1,4 @@
+//All standard imports goes here.
 import React from 'react';
 
 function financeApp() {
