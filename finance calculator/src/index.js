@@ -5,5 +5,5 @@ import FinanceApp from './financeApp';
 
 
 ReactDom.render(
-<financeApp/>,
+<FinanceApp/>,
 document.getElementById('root'));
