@@ -10,3 +10,5 @@ function financeApp() {
   )
   
 }
+
+export default FinanceApp;
