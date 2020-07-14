@@ -1,6 +1,6 @@
 import React from 'react';
 
-function financeApp() {
+function financeApp(props) {
   return(
     <div id='enclosingDiv'>
       <label id='typeLabel'>Select Type Of Instrument</label>
