@@ -14,11 +14,12 @@ const SelectBox= ({value,handleChange}) =>{
                     <option id="int" value="INT">Interest Calculator</option>
                     <option id="emi" value="EMI">EMI Calculator</option>
                     <option id="inp" value="INP">Investment Plan Calculator</option>
+                    <option id="gnp" value="GNP">Choose a Government Scheme</option>
                 </select>
-                {/* We will add it later
+                
                  <div className="mdl-cell mdl-cell--2-col"></div>
                 <label id='valuelabel' className="mdl-cell mdl-cell--2-col">Accept Terms & Conditions</label>
-                <input type="radio" className="mdl-cell mdl-cell--1-col MarginAuto" id="terms_condition"/> */}
+                <input type="radio" className="mdl-cell mdl-cell--1-col MarginAuto" id="terms_condition"/> 
             </div>
       </div>
     )
