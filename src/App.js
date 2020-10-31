@@ -8,9 +8,6 @@ import {
 import UploadAndSplit from "./UploadAndSplit";
 import Puzzle from "./Puzzle";
 
-var imageToSlices = require('image-to-slices');
-var path = require('path');
-
 class App extends React.Component {
   constructor(props)
   {
