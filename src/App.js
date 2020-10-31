@@ -5,8 +5,8 @@ import {
   NavLink,
   HashRouter
 } from "react-router-dom";
-import Home from "./Home";
-import Stuff from "./Stuff";
+import UploadAndSplit from "./UploadAndSplit";
+import Puzzle from "./Puzzle";
 
 var imageToSlices = require('image-to-slices');
 var path = require('path');
@@ -15,55 +15,32 @@ class App extends React.Component {
   constructor(props)
   {
     super(props);
-    this.state ={dataImages:[]}
+    this.state ={imageData:[]}
     this.imageUploaded = this.imageUploaded.bind(this);
+  
   }
-  imageUploaded(event)
+  imageUploaded(state)
   {
-    console.log(event);
-    //this.setState({imageValue:event.target.value});
-    var imageToSlice = imageToSlices;
-    var self = this;
-    var lineXArray = [100,200,300];
-    var lineYArray = [100,200];
-    //let imgPath = path.join(__dirname, event.target.value);
-    imageToSlice(imgPath, lineXArray, lineYArray, {
-      saveToDataUrl: true,
-      //middleBoundaryMode: true,
-      clipperOptions: {
-        quality: 75
-      }
-    }, function(dataUrlList) {
-        console.log('sliced', dataUrlList);
-        self.setState({dataImages:dataUrlList})
-    });
+    this.setState({imageData:state})
   }
-  // componentDidMount(){
-  //   var imageToSlices = window.imageToSlices;
-  //   imageToSlices(source, lineXArray, lineYArray, {
-  //   saveToDataUrl: true
-  //   }, function(dataUrlList) {
-  //   console.log('sliced', dataUrlList);
-  //   });
-  // }
+  
   render()
   {
     return (
       <div className="App">
         
         <HashRouter>
-        <div>
-          <h1>Simple SPA</h1>
-          <ul className="header">
-            <li><NavLink exact to="/">Home</NavLink></li>
-            <li><NavLink to="/puzzle-2">Stuff</NavLink></li>
+        <div className="mdl-grid">
+          <h1 className="mdl-cell mdl-cell--12-col text-align-center">Image Puzzle</h1>
+          <ul hidden className="header mdl-cell mdl-cell--12-col">
+            <li><NavLink exact to="/">HUploadAndSplitome</NavLink></li>
+            <li><NavLink to="/puzzle-2">Puzzle</NavLink></li>
           </ul>
-          <div className="content">
-            
+          <div className="mdl-cell mdl-cell--12-col text-align-center">
             <Route exact path="/" render={(props) => (
-                <Home {...props} imageUploaded={this.imageUploaded} /> )}/>
+                <UploadAndSplit {...props} imageUploaded={this.imageUploaded} /> )}/>
             <Route path="/puzzle-2" render={(props) => (
-                <Stuff {...props} dataImages={this.state.dataImages} /> )}/>
+                <Puzzle {...props} dataImages={this.state.imageData} /> )}/>
           </div>
         </div>
         </HashRouter>
