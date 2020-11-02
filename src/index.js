@@ -1,11 +1,9 @@
-//All standard imports goes here.
 import React from 'react';
-import ReactDom from 'react-dom';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
 
-//All project related imports goes here.
-import FinanceApp from './financeApp';
+ReactDOM.render(<App />,document.getElementById('root'));
 
 
-ReactDom.render(
-<FinanceApp/>,
-document.getElementById('root'));
+
