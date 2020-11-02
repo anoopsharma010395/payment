@@ -1118,7 +1118,7 @@
 }
 .dropClass{
   height: 160px;
-  width: 160px;
+  width: 160px !important;
 }
 .text-align-center{
   text-align: center;
